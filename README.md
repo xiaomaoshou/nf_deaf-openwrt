@@ -1,5 +1,6 @@
 **一、编译方法 以immortalwrt-mt798x 为例：**
 1. 准备工作
+   
     1.1 克隆 immortalwrt-mt798x 仓库
     git clone https://github.com/hanwckf/immortalwrt-mt798x.git
     cd immortalwrt-mt798x
@@ -8,7 +9,7 @@
     ./scripts/feeds update -a
     ./scripts/feeds install -a
     
-1.3 添加 nf_deaf 源码
+    1.3 添加 nf_deaf 源码
     git clone https://github.com/kob/nf_deaf-openwrt.git package/kernel/nf_deaf
     
 2. 配置编译选项
