@@ -14,13 +14,15 @@
     1.3 添加 nf_deaf 源码
     git clone https://github.com/kob/nf_deaf-openwrt.git package/kernel/nf_deaf
     
-3. 配置编译选项
-2.1 启用 nf_deaf 模块
+2. 配置编译选项
+
+   2.1 启用 nf_deaf 模块
     运行菜单配置工具：
     make menuconfig
     导航到以下路径并启用模块：
-    Kernel Modules → Netfilter Extensions → <*> kmod-nf-deaf 
-2.2 确认依赖模块已启用
+    Kernel Modules → Netfilter Extensions → <*> kmod-nf-deaf
+   
+   2.2 确认依赖模块已启用
     确保 kmod-nf-conntrack 已启用（路径同上）。    
 4. 编译完整固件
     make -j$(nproc) V=s
