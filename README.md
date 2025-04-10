@@ -6,6 +6,7 @@
     cd immortalwrt-mt798x
    
     1.2 更新 feeds 并安装依赖
+   
     ./scripts/feeds update -a
    
     ./scripts/feeds install -a
