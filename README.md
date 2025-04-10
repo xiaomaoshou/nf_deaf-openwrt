@@ -1,10 +1,10 @@
 **一、编译方法 以immortalwrt-mt798x 为例：**
 1. 准备工作
-1.1 克隆 immortalwrt-mt798x 仓库
+    1.1 克隆 immortalwrt-mt798x 仓库
     git clone https://github.com/hanwckf/immortalwrt-mt798x.git
     cd immortalwrt-mt798x
    
-1.2 更新 feeds 并安装依赖
+    1.2 更新 feeds 并安装依赖
     ./scripts/feeds update -a
     ./scripts/feeds install -a
     
