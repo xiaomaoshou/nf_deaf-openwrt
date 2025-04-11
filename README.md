@@ -28,7 +28,7 @@
     make -j$(nproc) V=s
    
 5. 仅编译 nf_deaf 模块
-   make package/custom/nf_deaf/compile V=s
+   make package/kernel/nf_deaf/compile V=s
    编译结果位于bin/targets/<架构>/packages/kmod-nf-deaf_*.ipk
 备注：需要修改伪造请求内容请见https://github.com/kob/nf_deaf
 
