@@ -1,16 +1,9 @@
-#obj-m := nf_deaf.o
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=nf_deaf
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
-
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/kob/nf_deaf.git
-PKG_SOURCE_DATE:=2025-04-09   # 替换为仓库实际提交日期
-PKG_SOURCE_VERSION:=a481ca95aa5a127c739402e086743d870273c1f2  # 替换为实际提交的哈希值（例如 `git rev-parse HEAD`）
-PKG_MIRROR_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -22,10 +15,13 @@ define KernelPackage/nf_deaf
   DEPENDS:=+kmod-nf-conntrack
 endef
 
+define KernelPackage/nf_deaf/description
+  A kernel module that generates crafted TCP responses based on packet marks.
+endef
+
 define Build/Prepare
-	$(call Build/Prepare/Default)
-	# 可选：应用补丁（若有兼容性问题）
-	# patch -d $(PKG_BUILD_DIR) -p1 < $(CURDIR)/patches/*.patch
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/Compile
